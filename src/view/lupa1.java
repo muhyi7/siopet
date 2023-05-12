@@ -29,20 +29,22 @@ public class lupa1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        t_lanjut = new javax.swing.JLabel();
+        b_lanjut = new javax.swing.JLabel();
         t_username1 = new javax.swing.JTextField();
         t_PIN = new javax.swing.JTextField();
+        b_exit = new javax.swing.JLabel();
+        b_back = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        t_lanjut.addMouseListener(new java.awt.event.MouseAdapter() {
+        b_lanjut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                t_lanjutMouseClicked(evt);
+                b_lanjutMouseClicked(evt);
             }
         });
-        getContentPane().add(t_lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 210, 50));
+        getContentPane().add(b_lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 210, 50));
 
         t_username1.setBackground(new Color(0,0,0,0));
         t_username1.setBorder(null);
@@ -62,14 +64,25 @@ public class lupa1 extends javax.swing.JFrame {
         });
         getContentPane().add(t_PIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 380, 70));
 
+        b_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/exit.png"))); // NOI18N
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 20, -1, -1));
+
+        b_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/previous.png"))); // NOI18N
+        b_back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_backMouseClicked(evt);
+            }
+        });
+        getContentPane().add(b_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 20, -1, -1));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Lupa password 1.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void t_lanjutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_lanjutMouseClicked
+    private void b_lanjutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_lanjutMouseClicked
         String username = t_username1.getText();
         String pin = t_PIN.getText();
          Logic.LogicLogin login = new Logic.LogicLogin();
@@ -82,7 +95,7 @@ public class lupa1 extends javax.swing.JFrame {
          }else{
              JOptionPane.showMessageDialog(rootPane, "Username dan PIN tidak valid");
          }
-    }//GEN-LAST:event_t_lanjutMouseClicked
+    }//GEN-LAST:event_b_lanjutMouseClicked
 
     private void t_username1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_username1ActionPerformed
         // TODO add your handling code here:
@@ -91,6 +104,11 @@ public class lupa1 extends javax.swing.JFrame {
     private void t_PINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_PINActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t_PINActionPerformed
+
+    private void b_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_backMouseClicked
+         new login().setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_b_backMouseClicked
 
     /**
      * @param args the command line arguments
@@ -128,9 +146,11 @@ public class lupa1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel b_back;
+    private javax.swing.JLabel b_exit;
+    private javax.swing.JLabel b_lanjut;
     private javax.swing.JLabel background;
     private javax.swing.JTextField t_PIN;
-    private javax.swing.JLabel t_lanjut;
     private javax.swing.JTextField t_username1;
     // End of variables declaration//GEN-END:variables
 }
