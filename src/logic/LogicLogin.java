@@ -4,6 +4,7 @@
  */
 package Logic;
 
+import java.sql.Blob;
 import view.login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,9 +25,9 @@ public class LogicLogin {
     public static String userId;
     public static String nama;
     
-    public boolean log(String username, String pass){
+    public boolean log(String username, String password){
         try {
-            String query = "SELECT * FROM tb_login WHERE id_pegawai ='"+ username +"' AND password ='" + pass + "'";
+            String query = "SELECT * FROM tb_login WHERE id_pegawai ='"+ username +"' AND password ='" + password + "'";
             Connection koneksi = (Connection)Conn.configDB();
             PreparedStatement pst = koneksi.prepareStatement(query);
             ResultSet res = pst.executeQuery();
@@ -52,6 +53,7 @@ public class LogicLogin {
             
             if(res.next()){
                this.userId = res.getString("id_login");
+                Blob gambarBlob = res.getBlob("gambar");
                 return true;
             }else{
                 return false;
@@ -61,9 +63,9 @@ public class LogicLogin {
         }
     }
     
-    public boolean changePassword(String pass){
+    public boolean changePassword(String password){
         try {
-            String query = "UPDATE tb_login SET password ='" + pass + "' WHERE id_login ='" + userId + "'";
+            String query = "UPDATE tb_login SET password ='" + password + "' WHERE id_login ='" + userId + "'";
             Statement st = (Statement) Conn.configDB().createStatement();
             st.executeUpdate(query);
           return true;

@@ -3,9 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import notif.login.*;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.*;
 /**
  *
  * @author lenovo
@@ -18,6 +22,12 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
         this.hideEye.setVisible(false);
+    }
+    public void removePlaceHolderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
     }
 
     /**
@@ -60,6 +70,14 @@ public class login extends javax.swing.JFrame {
         t_username.setBackground(new Color(0,0,0,0));
         t_username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         t_username.setBorder(null);
+        t_username.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                t_usernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                t_usernameFocusLost(evt);
+            }
+        });
         t_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 t_usernameActionPerformed(evt);
@@ -116,20 +134,22 @@ public class login extends javax.swing.JFrame {
 
     private void b_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_loginMouseClicked
         String username = t_username.getText();
-        String pass = t_password.getText();
+        String password = t_password.getText();
         Logic.LogicLogin login = new Logic.LogicLogin();
-        boolean logg = login.log(username, pass);
+        boolean logg = login.log(username, password);
         if(logg){
             String lvl = Logic.LogicLogin.level;
-            this.setVisible(false);
-            new login().dispose();
-            if(lvl.equals("owner")){
-                new dashboard().setVisible(true);
-            }else{
-                new dashboard().setVisible(true);
+            this.setVisible(true);
+            if(lvl.equals("owner")){   
+                Floginberhasilowner owner = new Floginberhasilowner();
+                owner.setVisible(true);
+            }else if(lvl.equals("admin toko")){
+                Floginberhasiladmin admin = new Floginberhasiladmin();
+                admin.setVisible(true);
             }  
         }else{
-             JOptionPane.showMessageDialog(this, "username dan password salah");
+             Flogingagal gagal = new Flogingagal();
+             gagal.setVisible(true);
         }
         
     }//GEN-LAST:event_b_loginMouseClicked
@@ -162,6 +182,18 @@ public class login extends javax.swing.JFrame {
     private void t_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t_passwordActionPerformed
+
+    private void t_usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_t_usernameFocusGained
+        if(t_username.getText().equals("Masukkan Username")){
+            t_username.setText(null);
+            t_username.requestFocus();
+            removePlaceHolderStyle(t_username);
+        }
+    }//GEN-LAST:event_t_usernameFocusGained
+
+    private void t_usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_t_usernameFocusLost
+
+    }//GEN-LAST:event_t_usernameFocusLost
 
     /**
      * @param args the command line arguments
