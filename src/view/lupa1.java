@@ -6,6 +6,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import java.awt.*;
+import notif.login.*;
 
 /**
  *
@@ -37,6 +38,8 @@ public class lupa1 extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         b_lanjut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -53,7 +56,7 @@ public class lupa1 extends javax.swing.JFrame {
                 t_username1ActionPerformed(evt);
             }
         });
-        getContentPane().add(t_username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 270, 380, 60));
+        getContentPane().add(t_username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 380, 60));
 
         t_PIN.setBackground(new Color(0,0,0,0));
         t_PIN.setBorder(null);
@@ -65,7 +68,12 @@ public class lupa1 extends javax.swing.JFrame {
         getContentPane().add(t_PIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 380, 70));
 
         b_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/exit.png"))); // NOI18N
-        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 20, -1, -1));
+        b_exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_exitMouseClicked(evt);
+            }
+        });
+        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
 
         b_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/previous.png"))); // NOI18N
         b_back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -73,9 +81,9 @@ public class lupa1 extends javax.swing.JFrame {
                 b_backMouseClicked(evt);
             }
         });
-        getContentPane().add(b_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 20, -1, -1));
+        getContentPane().add(b_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Lupa password 1.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Login/Lupa password 1.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         pack();
@@ -88,12 +96,11 @@ public class lupa1 extends javax.swing.JFrame {
          Logic.LogicLogin login = new Logic.LogicLogin();
          boolean konfirmasi = login.forgetPassword(username,pin);
          if(konfirmasi){
-             JOptionPane.showMessageDialog(rootPane, "username dan PIN valid");
-             this.setVisible(false);
-             new lupa2().setVisible(true);
-             this.dispose();
+             FPinberhasil berhasil = new FPinberhasil();
+             berhasil.setVisible(true);
          }else{
-             JOptionPane.showMessageDialog(rootPane, "Username dan PIN tidak valid");
+             FPingagal gagal = new FPingagal();
+             gagal.setVisible(true);
          }
     }//GEN-LAST:event_b_lanjutMouseClicked
 
@@ -109,6 +116,10 @@ public class lupa1 extends javax.swing.JFrame {
          new login().setVisible(true);
          this.dispose();
     }//GEN-LAST:event_b_backMouseClicked
+
+    private void b_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_exitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_b_exitMouseClicked
 
     /**
      * @param args the command line arguments

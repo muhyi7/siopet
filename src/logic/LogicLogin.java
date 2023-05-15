@@ -35,6 +35,7 @@ public class LogicLogin {
                 String lvl = res.getString("level");
                 this.level = lvl;
                 this.userId = res.getString("id_login");
+                this.nama = res.getString("nama_pegawai");
                 return true;
             }else{
                   return false;

@@ -51,9 +51,10 @@ public class Floginberhasilowner extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_okeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_okeMouseClicked
-        this.dispose();
+      
         new login().setVisible(false);
-        new dashboard().setVisible(true);
+        new dashboardadmin().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_button_okeMouseClicked
 
     /**

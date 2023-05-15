@@ -26,21 +26,31 @@ public class Fpasswordsalah extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        button_oke = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        button_oke.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_okeMouseClicked(evt);
+            }
+        });
+        getContentPane().add(button_oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 180, 50));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/logingagal.png"))); // NOI18N
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_okeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_okeMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_button_okeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +88,7 @@ public class Fpasswordsalah extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel background;
+    private javax.swing.JLabel button_oke;
     // End of variables declaration//GEN-END:variables
 }

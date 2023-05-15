@@ -6,6 +6,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import java.awt.*;
+import notif.login.*;
 
 /**
  *
@@ -32,9 +33,13 @@ public class lupa2 extends javax.swing.JFrame {
         t_newpass = new javax.swing.JTextField();
         t_validpass = new javax.swing.JTextField();
         t_ubahpass = new javax.swing.JLabel();
+        btnexit = new javax.swing.JLabel();
+        btnback = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         t_newpass.setBackground(new Color(0,0,0,0));
@@ -52,7 +57,23 @@ public class lupa2 extends javax.swing.JFrame {
         });
         getContentPane().add(t_ubahpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 480, 190, 70));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Lupa password 2.png"))); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/exit.png"))); // NOI18N
+        btnexit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnexitMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
+
+        btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/previous.png"))); // NOI18N
+        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnbackMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Login/Lupa password 2.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -66,16 +87,24 @@ public class lupa2 extends javax.swing.JFrame {
             if(newpassword.length() >= 8){
             Logic.LogicLogin login = new Logic.LogicLogin();
             boolean konfirmasi = login.changePassword(newpassword);
-            JOptionPane.showMessageDialog(rootPane, "password berhasil di ganti");
-            this.setVisible(false);
-            new login().setVisible(true); 
+            new Fpasswordubah().setVisible(konfirmasi);
             }else{
-              JOptionPane.showMessageDialog(rootPane, "Password Harus lebih dari 7 digit");
+              Fpasswordkurang kurang = new Fpasswordkurang();
+              kurang.setVisible(true);
             }
         }else{
-            JOptionPane.showMessageDialog(rootPane, "password tidak sama");
-        } this.dispose();
+            Fpasswordbeda beda = new Fpasswordbeda();
+            beda.setVisible(true);
+        }
     }//GEN-LAST:event_t_ubahpassMouseClicked
+
+    private void btnbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbackMouseClicked
+        new lupa1().setVisible(true);
+    }//GEN-LAST:event_btnbackMouseClicked
+
+    private void btnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnexitMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnexitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -114,6 +143,8 @@ public class lupa2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JLabel btnback;
+    private javax.swing.JLabel btnexit;
     private javax.swing.JTextField t_newpass;
     private javax.swing.JLabel t_ubahpass;
     private javax.swing.JTextField t_validpass;

@@ -32,6 +32,8 @@ public class Floginberhasiladmin extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         button_oke.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -45,12 +47,15 @@ public class Floginberhasiladmin extends javax.swing.JFrame {
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_okeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_okeMouseClicked
-        this.dispose();
+        
         new login().setVisible(false);
-        new dashboard().setVisible(true);
+        new dashboardadmin().setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_button_okeMouseClicked
 
     /**

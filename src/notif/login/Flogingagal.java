@@ -4,6 +4,8 @@
  */
 package notif.login;
 
+import view.login;
+
 /**
  *
  * @author lenovo

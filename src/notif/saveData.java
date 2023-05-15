@@ -55,7 +55,7 @@ public class saveData extends javax.swing.JFrame {
        
         this.dispose();
         new login().setVisible(false);
-        new dashboard().setVisible(true);
+        new dashboardadmin().setVisible(true);
     }//GEN-LAST:event_btn_okeMouseClicked
 
     /**

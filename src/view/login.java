@@ -16,12 +16,20 @@ import javax.swing.*;
  */
 public class login extends javax.swing.JFrame {
 
-    /**
+//    String username;
+   /**
      * Creates new form landing
      */
     public login() {
         initComponents();
         this.hideEye.setVisible(false);
+        addPlaceHolderStyle(txtpassword);
+    }
+    public void addPlaceHolderStyle(JTextField textfield){
+        Font font = textfield.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textfield.setFont(font);
+        textfield.setForeground(Color.gray);
     }
     public void removePlaceHolderStyle(JTextField textField){
         Font font = textField.getFont();
@@ -41,14 +49,16 @@ public class login extends javax.swing.JFrame {
 
         hideEye = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
-        t_username = new javax.swing.JTextField();
-        t_password = new javax.swing.JPasswordField();
+        txtusername = new javax.swing.JTextField();
+        txtpassword = new javax.swing.JPasswordField();
         b_login = new javax.swing.JLabel();
         b_lupapass = new javax.swing.JLabel();
         exit1 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye_hide.png"))); // NOI18N
@@ -67,37 +77,51 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 410, -1, -1));
 
-        t_username.setBackground(new Color(0,0,0,0));
-        t_username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        t_username.setBorder(null);
-        t_username.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtusername.setBackground(new Color(0,0,0,0));
+        txtusername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtusername.setBorder(null);
+        txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                t_usernameFocusGained(evt);
+                txtusernameFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                t_usernameFocusLost(evt);
+                txtusernameFocusLost(evt);
             }
         });
-        t_username.addActionListener(new java.awt.event.ActionListener() {
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t_usernameActionPerformed(evt);
+                txtusernameActionPerformed(evt);
             }
         });
-        getContentPane().add(t_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 360, 60));
+        getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 360, 60));
 
-        t_password.setBackground(new Color(0,0,0,0));
-        t_password.setBorder(null);
-        t_password.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtpassword.setBackground(new Color(0,0,0,0));
+        txtpassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtpassword.setText("Masukkan Password");
+        txtpassword.setBorder(null);
+        txtpassword.setEchoChar('\u0000');
+        txtpassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtpasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtpasswordFocusLost(evt);
+            }
+        });
+        txtpassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                t_passwordMousePressed(evt);
+                txtpasswordMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                txtpasswordMouseReleased(evt);
             }
         });
-        t_password.addActionListener(new java.awt.event.ActionListener() {
+        txtpassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t_passwordActionPerformed(evt);
+                txtpasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(t_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 360, 70));
+        getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 360, 70));
 
         b_login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,22 +143,22 @@ public class login extends javax.swing.JFrame {
                 exit1MouseClicked(evt);
             }
         });
-        getContentPane().add(exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 10, -1, -1));
+        getContentPane().add(exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 10, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Login Page.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Login/Login.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void t_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_usernameActionPerformed
+    private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_t_usernameActionPerformed
+    }//GEN-LAST:event_txtusernameActionPerformed
 
     private void b_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_loginMouseClicked
-        String username = t_username.getText();
-        String password = t_password.getText();
+        String username = txtusername.getText();
+        String password = txtpassword.getText();
         Logic.LogicLogin login = new Logic.LogicLogin();
         boolean logg = login.log(username, password);
         if(logg){
@@ -160,40 +184,65 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_b_lupapassMouseClicked
 
     private void exit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exit1MouseClicked
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_exit1MouseClicked
 
     private void unhideEyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unhideEyeMousePressed
         hideEye.setVisible(true);
         unhideEye.setVisible(false);
-        t_password.setEchoChar('*');
+        txtpassword.setEchoChar('*');
     }//GEN-LAST:event_unhideEyeMousePressed
 
     private void hideEyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideEyeMousePressed
         unhideEye.setVisible(true);
         hideEye.setVisible(false);
-        t_password.setEchoChar((char)0);
+        txtpassword.setEchoChar((char)0);
     }//GEN-LAST:event_hideEyeMousePressed
 
-    private void t_passwordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_passwordMousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_t_passwordMousePressed
+    private void txtpasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpasswordMousePressed
 
-    private void t_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_t_passwordActionPerformed
+    }//GEN-LAST:event_txtpasswordMousePressed
 
-    private void t_usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_t_usernameFocusGained
-        if(t_username.getText().equals("Masukkan Username")){
-            t_username.setText(null);
-            t_username.requestFocus();
-            removePlaceHolderStyle(t_username);
+    private void txtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpasswordActionPerformed
+
+    private void txtusernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusernameFocusGained
+        if(txtusername.getText().equals("Masukkan Username")){
+            txtusername.setText(null);
+            txtusername.requestFocus();
+            removePlaceHolderStyle(txtusername);
         }
-    }//GEN-LAST:event_t_usernameFocusGained
+    }//GEN-LAST:event_txtusernameFocusGained
 
-    private void t_usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_t_usernameFocusLost
+    private void txtusernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusernameFocusLost
+            if(txtusername.getText().length()==0){     
+            txtusername.setText("Masukkan Username");
+            addPlaceHolderStyle(txtusername);
+            }
+    }//GEN-LAST:event_txtusernameFocusLost
 
-    }//GEN-LAST:event_t_usernameFocusLost
+    private void txtpasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpasswordFocusGained
+        if(txtpassword.getText().equals("Masukkan Password")){
+            txtpassword.setText(null);
+            txtpassword.requestFocus(); 
+            txtpassword.setForeground(Color.black);
+            txtpassword.setEchoChar('*');
+            removePlaceHolderStyle(txtusername);
+        }
+    }//GEN-LAST:event_txtpasswordFocusGained
+
+    private void txtpasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpasswordFocusLost
+        if(txtpassword.getText().length()==0){
+            addPlaceHolderStyle(txtpassword);
+            txtpassword.setText("Masukkan Password");
+            txtpassword.setEchoChar('\u0000');
+        }
+    }//GEN-LAST:event_txtpasswordFocusLost
+
+    private void txtpasswordMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpasswordMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpasswordMouseReleased
 
     /**
      * @param args the command line arguments
@@ -237,8 +286,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel exit1;
     private javax.swing.JLabel hideEye;
-    private javax.swing.JPasswordField t_password;
-    private javax.swing.JTextField t_username;
+    private javax.swing.JPasswordField txtpassword;
+    private javax.swing.JTextField txtusername;
     private javax.swing.JLabel unhideEye;
     // End of variables declaration//GEN-END:variables
 }
