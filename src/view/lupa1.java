@@ -42,14 +42,16 @@ public class lupa1 extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        b_lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_lanjut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_lanjutMouseClicked(evt);
             }
         });
-        getContentPane().add(b_lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 490, 210, 50));
+        getContentPane().add(b_lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 480, 240, 70));
 
         t_username1.setBackground(new Color(0,0,0,0));
+        t_username1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         t_username1.setBorder(null);
         t_username1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,6 +61,7 @@ public class lupa1 extends javax.swing.JFrame {
         getContentPane().add(t_username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 380, 60));
 
         t_PIN.setBackground(new Color(0,0,0,0));
+        t_PIN.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         t_PIN.setBorder(null);
         t_PIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +70,7 @@ public class lupa1 extends javax.swing.JFrame {
         });
         getContentPane().add(t_PIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 380, 70));
 
-        b_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/exit.png"))); // NOI18N
+        b_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
         b_exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_exitMouseClicked(evt);
@@ -75,7 +78,7 @@ public class lupa1 extends javax.swing.JFrame {
         });
         getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
 
-        b_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/previous.png"))); // NOI18N
+        b_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
         b_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_backMouseClicked(evt);
@@ -83,7 +86,7 @@ public class lupa1 extends javax.swing.JFrame {
         });
         getContentPane().add(b_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Login/Lupa password 1.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ForgetPassword.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         pack();

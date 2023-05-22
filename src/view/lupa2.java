@@ -43,13 +43,16 @@ public class lupa2 extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         t_newpass.setBackground(new Color(0,0,0,0));
+        t_newpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         t_newpass.setBorder(null);
         getContentPane().add(t_newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, 390, 60));
 
         t_validpass.setBackground(new Color(0,0,0,0));
+        t_validpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         t_validpass.setBorder(null);
         getContentPane().add(t_validpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 390, 70));
 
+        t_ubahpass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         t_ubahpass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 t_ubahpassMouseClicked(evt);
@@ -57,7 +60,7 @@ public class lupa2 extends javax.swing.JFrame {
         });
         getContentPane().add(t_ubahpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 480, 190, 70));
 
-        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/exit.png"))); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
         btnexit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnexitMouseClicked(evt);
@@ -65,7 +68,7 @@ public class lupa2 extends javax.swing.JFrame {
         });
         getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
 
-        btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/icon/previous.png"))); // NOI18N
+        btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
         btnback.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnbackMouseClicked(evt);
@@ -73,7 +76,7 @@ public class lupa2 extends javax.swing.JFrame {
         });
         getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Login/Lupa password 2.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ChangePassword.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

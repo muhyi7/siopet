@@ -5,6 +5,13 @@
 package view;
 
 import Logic.LogicLogin;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.NumberFormat;
+import java.util.Locale;
+import javax.swing.JOptionPane;
+import koneksi.Conn;
 import view.*;
 
 /**
@@ -12,18 +19,40 @@ import view.*;
  * @author lenovo
  */
 public class dasboardowner extends javax.swing.JFrame {
-
+    
+//     LogicLogin lg = new LogicLogin();
+     
+//     NumberFormat nf = NumberFormat.getNumberInstance(new Locale("in", "ID"));
     /**
      * Creates new form dasboardowner
      */
     public dasboardowner() {
         initComponents();
-//        load_data();
-    lblnama.setText("Farhan Ariyanto");
+        load_data();
+//   lblnama.setText("Farhan Ariyanto");
     }
+    public void load_data(){
+//        lblNama.setText(String.valueOf(new Logic.login().userId));
+        lblnama.setText(LogicLogin.nama);
+    }
+//    public void User(){
+//        
+//         String id = lg.userId;
+//         try {
+//            String queryCek = "SELECT * FROM tb_pegawai WHERE nama_pegawai = '"+id+"'";
+//            Connection koneksi = (Connection) Conn.configDB();
+//            Statement pstCek = koneksi.createStatement();
+//            ResultSet res = pstCek.executeQuery(queryCek);
+//            if(res.next()){
+//                lblnama.setText(res.getString("nama_pegawai"));
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(rootPane, e);
+//        }
+//    }
 //    login lg = new login();
-//public void load_data(){
-////        lblNama.setText(String.valueOf(new Logic.login().userId));
+// public void load_data(){
+//        lblNama.setText(String.valueOf(new Logic.login().userId));
 //        lblnama.setText(login.class.getName());
 //    }
 
@@ -49,6 +78,7 @@ public class dasboardowner extends javax.swing.JFrame {
         getContentPane().add(lblnama, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 250, 50));
 
         buttonuser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Log Out", "Exit" }));
+        buttonuser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonuserActionPerformed(evt);
@@ -56,7 +86,7 @@ public class dasboardowner extends javax.swing.JFrame {
         });
         getContentPane().add(buttonuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 150, 40));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Dashboard/dashboard.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dashboard.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

@@ -34,6 +34,7 @@ public class Fpasswordbeda extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        button_oke.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button_oke.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button_okeMouseClicked(evt);

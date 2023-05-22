@@ -27,34 +27,34 @@ public class LogicLogin {
     
     public boolean log(String username, String password){
         try {
-            String query = "SELECT * FROM tb_login WHERE id_pegawai ='"+ username +"' AND password ='" + password + "'";
+            String query = "SELECT * FROM tb_pegawai WHERE id_pegawai ='"+ username +"' AND pass ='" + password + "'";
             Connection koneksi = (Connection)Conn.configDB();
             PreparedStatement pst = koneksi.prepareStatement(query);
             ResultSet res = pst.executeQuery();
             if(res.next()){
-                String lvl = res.getString("level");
-                this.level = lvl;
-                this.userId = res.getString("id_login");
+                String lvl = res.getString("jabatan");
+                this.level = res.getString("jabatan");
+                this.userId = res.getString("id_pegawai");
                 this.nama = res.getString("nama_pegawai");
                 return true;
             }else{
                   return false;
             }
         } catch (Exception e) {
+            e.printStackTrace();
                 return false;
         }
     }
     //method lupa1
     public boolean forgetPassword(String username,String pin ){
         try {
-            String query = "SELECT * FROM tb_login WHERE id_pegawai ='"+ username +"' AND pin ='" + pin + "'";
+            String query = "SELECT * FROM tb_pegawai WHERE id_pegawai ='"+ username +"' AND pin ='" + pin + "'";
             Connection koneksi = (Connection)Conn.configDB();
             PreparedStatement pst = koneksi.prepareStatement(query);
             ResultSet res = pst.executeQuery();
             
             if(res.next()){
-               this.userId = res.getString("id_login");
-                Blob gambarBlob = res.getBlob("gambar");
+               this.userId = res.getString("id_pegawai");
                 return true;
             }else{
                 return false;
@@ -66,7 +66,7 @@ public class LogicLogin {
     
     public boolean changePassword(String password){
         try {
-            String query = "UPDATE tb_login SET password ='" + password + "' WHERE id_login ='" + userId + "'";
+            String query = "UPDATE tb_pegawai SET pass ='" + password + "' WHERE id_pegawai ='" + userId + "'";
             Statement st = (Statement) Conn.configDB().createStatement();
             st.executeUpdate(query);
           return true;
@@ -78,7 +78,7 @@ public class LogicLogin {
     //method lupa2
     public boolean konfirmasiLupaPasswordUser(String username,int pin){
         try {
-            String query = "SELECT * FROM tb_login WHERE id_pegawai ='"+ username +"' AND pin ='" + pin + "' AND id = '"+userId+"'";
+            String query = "SELECT * FROM tb_pegawai WHERE id_pegawai ='"+ username +"' AND pin ='" + pin + "' AND id = '"+userId+"'";
             Connection koneksi = (Connection)Conn.configDB();
             PreparedStatement pst = koneksi.prepareStatement(query);
             ResultSet res = pst.executeQuery();

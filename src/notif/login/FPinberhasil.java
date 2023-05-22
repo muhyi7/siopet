@@ -28,23 +28,24 @@ public class FPinberhasil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JLabel();
         button_oke = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/Pinberhasil.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
+        button_oke.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         button_oke.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 button_okeMouseClicked(evt);
             }
         });
         getContentPane().add(button_oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 180, 50));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/Pinberhasil.png"))); // NOI18N
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);

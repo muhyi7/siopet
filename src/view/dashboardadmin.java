@@ -4,6 +4,7 @@
  */
 package view;
 
+import Logic.LogicLogin;
 import static view.dasboardowner.lblnama;
 
 /**
@@ -17,7 +18,12 @@ public class dashboardadmin extends javax.swing.JFrame {
      */
     public dashboardadmin() {
         initComponents();
-        lblnama.setText("Ahmad Muhyiddin");
+         load_data();
+//        lblnama.setText("Ahmad Muhyiddin");
+    }
+    public void load_data(){
+//        lblNama.setText(String.valueOf(new Logic.login().userId));
+        lblnama.setText(LogicLogin.nama);
     }
 //    login lg = new login();
 //    public void load_data(){
@@ -33,7 +39,6 @@ public class dashboardadmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblnama = new javax.swing.JLabel();
         buttonuser = new javax.swing.JComboBox<>();
         background = new javax.swing.JLabel();
 
@@ -46,6 +51,7 @@ public class dashboardadmin extends javax.swing.JFrame {
         getContentPane().add(lblnama, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 230, 50));
 
         buttonuser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Log Out", "Exit" }));
+        buttonuser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonuserActionPerformed(evt);
@@ -53,7 +59,7 @@ public class dashboardadmin extends javax.swing.JFrame {
         });
         getContentPane().add(buttonuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, 150, 40));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Dashboard/dashboard.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dashboard.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -160, 1920, 1080));
 
         pack();
@@ -113,6 +119,6 @@ public class dashboardadmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
     private javax.swing.JComboBox<String> buttonuser;
-    private javax.swing.JLabel lblnama;
+    public static final javax.swing.JLabel lblnama = new javax.swing.JLabel();
     // End of variables declaration//GEN-END:variables
 }

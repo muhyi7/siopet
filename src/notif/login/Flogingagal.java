@@ -36,6 +36,7 @@ public class Flogingagal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Button_Oke.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Button_Oke.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_OkeMouseClicked(evt);

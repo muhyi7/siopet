@@ -35,7 +35,7 @@ public class login extends javax.swing.JFrame {
         Font font = textField.getFont();
         font = font.deriveFont(Font.PLAIN);
         textField.setFont(font);
-        textField.setForeground(Color.black);
+        textField.setForeground(Color.gray);
     }
 
     /**
@@ -61,24 +61,25 @@ public class login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye_hide.png"))); // NOI18N
+        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
         hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 hideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 410, 20, 20));
+        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 400, 30, 30));
 
-        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/eye.png"))); // NOI18N
+        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 unhideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 410, -1, -1));
+        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 400, 30, 30));
 
         txtusername.setBackground(new Color(0,0,0,0));
-        txtusername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtusername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtusername.setText("Masukkan Username");
         txtusername.setBorder(null);
         txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -96,7 +97,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 360, 60));
 
         txtpassword.setBackground(new Color(0,0,0,0));
-        txtpassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        txtpassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtpassword.setText("Masukkan Password");
         txtpassword.setBorder(null);
         txtpassword.setEchoChar('\u0000');
@@ -123,6 +124,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 360, 70));
 
+        b_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_loginMouseClicked(evt);
@@ -137,7 +139,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(b_lupapass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 460, 130, 30));
 
-        exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/exit.png"))); // NOI18N
+        exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
         exit1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exit1MouseClicked(evt);
@@ -145,7 +147,7 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 10, -1, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/image/Login/Login.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Login.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -153,7 +155,7 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusernameActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtusernameActionPerformed
 
     private void b_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_loginMouseClicked
@@ -167,7 +169,7 @@ public class login extends javax.swing.JFrame {
             if(lvl.equals("owner")){   
                 Floginberhasilowner owner = new Floginberhasilowner();
                 owner.setVisible(true);
-            }else if(lvl.equals("admin toko")){
+            }else if(lvl.equals("admin kasir")){
                 Floginberhasiladmin admin = new Floginberhasiladmin();
                 admin.setVisible(true);
             }  
@@ -204,13 +206,14 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtpasswordMousePressed
 
     private void txtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswordActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_txtpasswordActionPerformed
 
     private void txtusernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtusernameFocusGained
         if(txtusername.getText().equals("Masukkan Username")){
             txtusername.setText(null);
             txtusername.requestFocus();
+            txtusername.setForeground(Color.black);
             removePlaceHolderStyle(txtusername);
         }
     }//GEN-LAST:event_txtusernameFocusGained
