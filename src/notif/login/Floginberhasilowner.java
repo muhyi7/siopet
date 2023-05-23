@@ -42,7 +42,7 @@ public class Floginberhasilowner extends javax.swing.JFrame {
                 button_okeMouseClicked(evt);
             }
         });
-        getContentPane().add(button_oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 180, 50));
+        getContentPane().add(button_oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, 170, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/loginowner.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

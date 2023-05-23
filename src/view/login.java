@@ -35,7 +35,7 @@ public class login extends javax.swing.JFrame {
         Font font = textField.getFont();
         font = font.deriveFont(Font.PLAIN);
         textField.setFont(font);
-        textField.setForeground(Color.gray);
+        textField.setForeground(Color.black);
     }
 
     /**
@@ -47,8 +47,8 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        hideEye = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
+        hideEye = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
         txtpassword = new javax.swing.JPasswordField();
         b_login = new javax.swing.JLabel();
@@ -61,25 +61,24 @@ public class login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
-        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                hideEyeMousePressed(evt);
-            }
-        });
-        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 400, 30, 30));
-
         unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 unhideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 400, 30, 30));
+        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+
+        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
+        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
 
         txtusername.setBackground(new Color(0,0,0,0));
         txtusername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtusername.setText("Masukkan Username");
         txtusername.setBorder(null);
         txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -192,13 +191,13 @@ public class login extends javax.swing.JFrame {
     private void unhideEyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unhideEyeMousePressed
         hideEye.setVisible(true);
         unhideEye.setVisible(false);
-        txtpassword.setEchoChar('*');
+        txtpassword.setEchoChar((char)0);
     }//GEN-LAST:event_unhideEyeMousePressed
 
     private void hideEyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideEyeMousePressed
-        unhideEye.setVisible(true);
+        unhideEye.setVisible(true); 
         hideEye.setVisible(false);
-        txtpassword.setEchoChar((char)0);
+        txtpassword.setEchoChar('*');
     }//GEN-LAST:event_hideEyeMousePressed
 
     private void txtpasswordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpasswordMousePressed
@@ -213,7 +212,6 @@ public class login extends javax.swing.JFrame {
         if(txtusername.getText().equals("Masukkan Username")){
             txtusername.setText(null);
             txtusername.requestFocus();
-            txtusername.setForeground(Color.black);
             removePlaceHolderStyle(txtusername);
         }
     }//GEN-LAST:event_txtusernameFocusGained

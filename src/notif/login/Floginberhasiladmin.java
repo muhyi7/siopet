@@ -42,7 +42,7 @@ public class Floginberhasiladmin extends javax.swing.JFrame {
                 button_okeMouseClicked(evt);
             }
         });
-        getContentPane().add(button_oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 180, 50));
+        getContentPane().add(button_oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 170, 50));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/loginadmin.png"))); // NOI18N
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

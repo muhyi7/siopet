@@ -60,7 +60,7 @@ public class dashboardadmin extends javax.swing.JFrame {
         getContentPane().add(buttonuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 10, 150, 40));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/dashboard.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -160, 1920, 1080));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
