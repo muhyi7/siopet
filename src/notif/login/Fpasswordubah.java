@@ -4,7 +4,7 @@
  */
 package notif.login;
 
-import view.dashboardadmin;
+import view.*;
 
 /**
  *
@@ -53,8 +53,7 @@ public class Fpasswordubah extends javax.swing.JFrame {
 
     private void button_okeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_okeMouseClicked
         this.dispose();
-        new dashboardadmin
-        ().setVisible(true);
+        new login().setVisible(true);
     }//GEN-LAST:event_button_okeMouseClicked
 
     /**

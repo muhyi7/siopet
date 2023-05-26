@@ -22,6 +22,8 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        popUp_berhasilLogin.setVisible(false);
+        
         this.hideEye.setVisible(false);
         addPlaceHolderStyle(txtpassword);
     }
@@ -47,6 +49,9 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUp_berhasilLogin = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
         hideEye = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
@@ -60,6 +65,23 @@ public class login extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        popUp_berhasilLogin.setBackground(new Color(0,0,0,200));
+        popUp_berhasilLogin.setLayout(null);
+
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        popUp_berhasilLogin.add(jLabel2);
+        jLabel2.setBounds(630, 360, 170, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/loginowner.png"))); // NOI18N
+        popUp_berhasilLogin.add(jLabel1);
+        jLabel1.setBounds(380, 140, 678, 310);
+
+        getContentPane().add(popUp_berhasilLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1464, 789));
 
         unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,7 +100,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
 
         txtusername.setBackground(new Color(0,0,0,0));
-        txtusername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtusername.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
         txtusername.setBorder(null);
         txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -96,8 +118,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 360, 60));
 
         txtpassword.setBackground(new Color(0,0,0,0));
-        txtpassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtpassword.setText("Masukkan Password");
+        txtpassword.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
         txtpassword.setBorder(null);
         txtpassword.setEchoChar('\u0000');
         txtpassword.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -166,11 +187,14 @@ public class login extends javax.swing.JFrame {
             String lvl = Logic.LogicLogin.level;
             this.setVisible(true);
             if(lvl.equals("owner")){   
-                Floginberhasilowner owner = new Floginberhasilowner();
-                owner.setVisible(true);
+//                Floginberhasilowner owner = new Floginberhasilowner();
+//                owner.setVisible(true);
+//                JOptionPane.showMessageDialog(null,"Berhasil Login Owner");
+                
+                popUp_berhasilLogin.setVisible(true);
             }else if(lvl.equals("admin kasir")){
-                Floginberhasiladmin admin = new Floginberhasiladmin();
-                admin.setVisible(true);
+                JOptionPane.showMessageDialog(null,"Berhasil Login Admin Kasir");
+                new dashboardadmin().setVisible(true);
             }  
         }else{
              Flogingagal gagal = new Flogingagal();
@@ -245,6 +269,12 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtpasswordMouseReleased
 
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        this.dispose();
+        popUp_berhasilLogin.setVisible(false);
+        new dasboardowner().setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -287,6 +317,9 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel exit1;
     private javax.swing.JLabel hideEye;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel popUp_berhasilLogin;
     private javax.swing.JPasswordField txtpassword;
     private javax.swing.JTextField txtusername;
     private javax.swing.JLabel unhideEye;

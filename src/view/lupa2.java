@@ -30,8 +30,12 @@ public class lupa2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        t_newpass = new javax.swing.JTextField();
-        t_validpass = new javax.swing.JTextField();
+        unhideEye = new javax.swing.JLabel();
+        hideEye = new javax.swing.JLabel();
+        unhideEye1 = new javax.swing.JLabel();
+        hideEye1 = new javax.swing.JLabel();
+        txt_newpass = new javax.swing.JPasswordField();
+        txt_validpass = new javax.swing.JPasswordField();
         t_ubahpass = new javax.swing.JLabel();
         btnexit = new javax.swing.JLabel();
         btnback = new javax.swing.JLabel();
@@ -42,15 +46,52 @@ public class lupa2 extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        t_newpass.setBackground(new Color(0,0,0,0));
-        t_newpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        t_newpass.setBorder(null);
-        getContentPane().add(t_newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 270, 390, 60));
+        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
+        unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                unhideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 280, 30, 30));
 
-        t_validpass.setBackground(new Color(0,0,0,0));
-        t_validpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        t_validpass.setBorder(null);
-        getContentPane().add(t_validpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 390, 70));
+        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
+        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 280, 30, 30));
+
+        unhideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
+        unhideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                unhideEye1MousePressed(evt);
+            }
+        });
+        getContentPane().add(unhideEye1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+
+        hideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
+        hideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideEye1MousePressed(evt);
+            }
+        });
+        getContentPane().add(hideEye1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+
+        txt_newpass.setBackground(new Color(0,0,0,0));
+        txt_newpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txt_newpass.setBorder(null);
+        getContentPane().add(txt_newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 270, 380, 60));
+
+        txt_validpass.setBackground(new Color(0,0,0,0));
+        txt_validpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txt_validpass.setBorder(null);
+        txt_validpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_validpassActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_validpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 380, 380, 70));
 
         t_ubahpass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         t_ubahpass.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -84,8 +125,8 @@ public class lupa2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void t_ubahpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_ubahpassMouseClicked
-        String newpassword = t_newpass.getText();
-        String validPassword = t_validpass.getText();
+        String newpassword = txt_newpass.getText();
+        String validPassword = txt_validpass.getText();
         if(newpassword.equals(validPassword)){
             if(newpassword.length() >= 8){
             Logic.LogicLogin login = new Logic.LogicLogin();
@@ -108,6 +149,34 @@ public class lupa2 extends javax.swing.JFrame {
     private void btnexitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnexitMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btnexitMouseClicked
+
+    private void txt_validpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_validpassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_validpassActionPerformed
+
+    private void unhideEyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unhideEyeMousePressed
+        hideEye.setVisible(true);
+        unhideEye.setVisible(false);
+        txt_newpass.setEchoChar((char)0);
+    }//GEN-LAST:event_unhideEyeMousePressed
+
+    private void hideEyeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideEyeMousePressed
+        unhideEye.setVisible(true);
+        hideEye.setVisible(false);
+        txt_newpass.setEchoChar('*');
+    }//GEN-LAST:event_hideEyeMousePressed
+
+    private void unhideEye1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unhideEye1MousePressed
+        hideEye.setVisible(true);
+        unhideEye.setVisible(false);
+        txt_validpass.setEchoChar((char)0);
+    }//GEN-LAST:event_unhideEye1MousePressed
+
+    private void hideEye1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideEye1MousePressed
+        unhideEye.setVisible(true);
+        hideEye.setVisible(false);
+        txt_validpass.setEchoChar('*');
+    }//GEN-LAST:event_hideEye1MousePressed
 
     /**
      * @param args the command line arguments
@@ -148,8 +217,12 @@ public class lupa2 extends javax.swing.JFrame {
     private javax.swing.JLabel background;
     private javax.swing.JLabel btnback;
     private javax.swing.JLabel btnexit;
-    private javax.swing.JTextField t_newpass;
+    private javax.swing.JLabel hideEye;
+    private javax.swing.JLabel hideEye1;
     private javax.swing.JLabel t_ubahpass;
-    private javax.swing.JTextField t_validpass;
+    private javax.swing.JPasswordField txt_newpass;
+    private javax.swing.JPasswordField txt_validpass;
+    private javax.swing.JLabel unhideEye;
+    private javax.swing.JLabel unhideEye1;
     // End of variables declaration//GEN-END:variables
 }
