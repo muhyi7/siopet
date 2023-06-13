@@ -6,6 +6,7 @@ package view;
 import notif.login.*;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Locale;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -56,6 +57,7 @@ public class login extends javax.swing.JFrame {
         hideEye = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
         txtpassword = new javax.swing.JPasswordField();
+        b_rfid = new javax.swing.JLabel();
         b_login = new javax.swing.JLabel();
         b_lupapass = new javax.swing.JLabel();
         exit1 = new javax.swing.JLabel();
@@ -64,9 +66,14 @@ public class login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         popUp_berhasilLogin.setBackground(new Color(0,0,0,200));
+        popUp_berhasilLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_berhasilLoginMousePressed(evt);
+            }
+        });
         popUp_berhasilLogin.setLayout(null);
 
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -81,7 +88,8 @@ public class login extends javax.swing.JFrame {
         popUp_berhasilLogin.add(jLabel1);
         jLabel1.setBounds(380, 140, 678, 310);
 
-        getContentPane().add(popUp_berhasilLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1464, 789));
+        getContentPane().add(popUp_berhasilLogin);
+        popUp_berhasilLogin.setBounds(0, 0, 1464, 789);
 
         unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,7 +97,8 @@ public class login extends javax.swing.JFrame {
                 unhideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+        getContentPane().add(unhideEye);
+        unhideEye.setBounds(1250, 400, 30, 30);
 
         hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
         hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,7 +106,8 @@ public class login extends javax.swing.JFrame {
                 hideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+        getContentPane().add(hideEye);
+        hideEye.setBounds(1250, 400, 30, 30);
 
         txtusername.setBackground(new Color(0,0,0,0));
         txtusername.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
@@ -115,7 +125,8 @@ public class login extends javax.swing.JFrame {
                 txtusernameActionPerformed(evt);
             }
         });
-        getContentPane().add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 360, 60));
+        getContentPane().add(txtusername);
+        txtusername.setBounds(910, 270, 360, 60);
 
         txtpassword.setBackground(new Color(0,0,0,0));
         txtpassword.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
@@ -142,7 +153,18 @@ public class login extends javax.swing.JFrame {
                 txtpasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 380, 360, 70));
+        getContentPane().add(txtpassword);
+        txtpassword.setBounds(900, 380, 360, 70);
+
+        b_rfid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
+        b_rfid.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_rfid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_rfidMouseClicked(evt);
+            }
+        });
+        getContentPane().add(b_rfid);
+        b_rfid.setBounds(1060, 610, 50, 50);
 
         b_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_login.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,27 +172,32 @@ public class login extends javax.swing.JFrame {
                 b_loginMouseClicked(evt);
             }
         });
-        getContentPane().add(b_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 520, 200, 60));
+        getContentPane().add(b_login);
+        b_login.setBounds(990, 520, 200, 60);
 
         b_lupapass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_lupapassMouseClicked(evt);
             }
         });
-        getContentPane().add(b_lupapass, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 460, 130, 30));
+        getContentPane().add(b_lupapass);
+        b_lupapass.setBounds(1160, 460, 130, 30);
 
         exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
+        exit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exit1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exit1MouseClicked(evt);
             }
         });
-        getContentPane().add(exit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 10, -1, -1));
+        getContentPane().add(exit1);
+        exit1.setBounds(1330, 10, 51, 51);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Login.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background);
+        background.setBounds(0, 0, 1464, 789);
 
-        pack();
+        setSize(new java.awt.Dimension(1464, 789));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -195,10 +222,23 @@ public class login extends javax.swing.JFrame {
             }else if(lvl.equals("admin kasir")){
                 JOptionPane.showMessageDialog(null,"Berhasil Login Admin Kasir");
                 new dashboardadmin().setVisible(true);
+
+//                  new Ploginberhasiladmin().setVisible(true);
+                
+//                this.dispose();
+//                new Floginberhasiladmin().setVisible(true);
+                
             }  
         }else{
-             Flogingagal gagal = new Flogingagal();
-             gagal.setVisible(true);
+//            popUp_berhasilLogin.setVisible(false);
+            Plogingagal apa = new Plogingagal();
+            apa.setSize(1464, 789);
+            this.add(apa);
+            this.setComponentZOrder(apa, 0);
+            this.revalidate();
+            this.repaint();
+//             Flogingagal gagal = new Flogingagal();
+//             gagal.setVisible(true);
         }
         
     }//GEN-LAST:event_b_loginMouseClicked
@@ -269,11 +309,25 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtpasswordMouseReleased
 
+    private void b_rfidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_rfidMouseClicked
+    JDialog dialog = new JDialog(this,"Login RFID",true);
+    dialog.setSize(1464,789);
+    dialog.getContentPane().add(new PopUp_RFID());
+    dialog.setLocationRelativeTo(this);
+    dialog.setUndecorated(true);
+    dialog.setVisible(true);
+    
+    }//GEN-LAST:event_b_rfidMouseClicked
+
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         this.dispose();
         popUp_berhasilLogin.setVisible(false);
         new dasboardowner().setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void popUp_berhasilLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_berhasilLoginMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popUp_berhasilLoginMousePressed
 
     /**
      * @param args the command line arguments
@@ -314,6 +368,7 @@ public class login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel b_login;
     private javax.swing.JLabel b_lupapass;
+    private javax.swing.JLabel b_rfid;
     private javax.swing.JLabel background;
     private javax.swing.JLabel exit1;
     private javax.swing.JLabel hideEye;

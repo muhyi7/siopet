@@ -4,20 +4,11 @@
  */
 package logic;
 
-import java.sql.Blob;
-
 /**
  *
  * @author lenovo
  */
-public class Insert {
-    private Blob gambar;
-    public Blob getGambar() {
-        return gambar;
-    }
-    public void setGambar(Blob gambar) {
-        this.gambar = gambar;
-    }
-
+public class RFID {
+    
     
 }

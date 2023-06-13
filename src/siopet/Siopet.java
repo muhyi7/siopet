@@ -14,7 +14,7 @@ public class Siopet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        view.login.main(args);
+        view.splash.main(args);
     }
     
 }

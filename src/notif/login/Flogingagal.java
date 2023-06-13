@@ -5,7 +5,7 @@
 package notif.login;
 
 import view.login;
-
+import java.awt.Color;
 /**
  *
  * @author lenovo
@@ -17,6 +17,7 @@ public class Flogingagal extends javax.swing.JFrame {
      */
     public Flogingagal() {
         initComponents();
+//        setOpacity(0);
     }
 
     /**
@@ -30,8 +31,10 @@ public class Flogingagal extends javax.swing.JFrame {
 
         Button_Oke = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,10 +45,13 @@ public class Flogingagal extends javax.swing.JFrame {
                 Button_OkeMouseClicked(evt);
             }
         });
-        getContentPane().add(Button_Oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 180, 50));
+        getContentPane().add(Button_Oke, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 170, 50));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/logingagal.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
+
+        jPanel1.setBackground(new Color(0,0,0,89));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 790));
 
         pack();
         setLocationRelativeTo(null);
@@ -93,5 +99,6 @@ public class Flogingagal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Button_Oke;
     private javax.swing.JLabel background;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
