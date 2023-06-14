@@ -34,12 +34,12 @@ public class lupa1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popUp_PINSalah = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         popUp_PINValid = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        popUp_PINSalah = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         b_lanjut = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
         hideEye = new javax.swing.JLabel();
@@ -53,6 +53,29 @@ public class lupa1 extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(null);
+
+        popUp_PINValid.setBackground(new Color(0,0,0,150));
+        popUp_PINValid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_PINValidMousePressed(evt);
+            }
+        });
+        popUp_PINValid.setLayout(null);
+
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        popUp_PINValid.add(jLabel7);
+        jLabel7.setBounds(630, 400, 180, 40);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup pin valid.png"))); // NOI18N
+        popUp_PINValid.add(jLabel8);
+        jLabel8.setBounds(380, 180, 720, 310);
+
+        getContentPane().add(popUp_PINValid);
+        popUp_PINValid.setBounds(0, 0, 1464, 789);
 
         popUp_PINSalah.setBackground(new Color(0,0,0,200));
         popUp_PINSalah.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -77,29 +100,6 @@ public class lupa1 extends javax.swing.JFrame {
 
         getContentPane().add(popUp_PINSalah);
         popUp_PINSalah.setBounds(0, 0, 1464, 789);
-
-        popUp_PINValid.setBackground(new Color(0,0,0,150));
-        popUp_PINValid.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                popUp_PINValidMousePressed(evt);
-            }
-        });
-        popUp_PINValid.setLayout(null);
-
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-        popUp_PINValid.add(jLabel7);
-        jLabel7.setBounds(630, 400, 180, 40);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/Pinberhasil.png"))); // NOI18N
-        popUp_PINValid.add(jLabel8);
-        jLabel8.setBounds(380, 180, 720, 310);
-
-        getContentPane().add(popUp_PINValid);
-        popUp_PINValid.setBounds(0, 0, 1464, 789);
 
         b_lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_lanjut.addMouseListener(new java.awt.event.MouseAdapter() {

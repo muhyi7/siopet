@@ -21,6 +21,7 @@ public class lupa2 extends javax.swing.JFrame {
         initComponents();
         popUp_PasswordKurang.setVisible(false);
         popUp_PasswordTidakSama.setVisible(false);
+        popUp_PasswordDiubah.setVisible(false);
     }
 
     /**
@@ -32,6 +33,9 @@ public class lupa2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUp_PasswordDiubah = new javax.swing.JPanel();
+        b_oke3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         popUp_PasswordTidakSama = new javax.swing.JPanel();
         b_oke2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -54,6 +58,29 @@ public class lupa2 extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        popUp_PasswordDiubah.setBackground(new Color(0,0,0,150));
+        popUp_PasswordDiubah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_PasswordDiubahMousePressed(evt);
+            }
+        });
+        popUp_PasswordDiubah.setLayout(null);
+
+        b_oke3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_oke3MouseClicked(evt);
+            }
+        });
+        popUp_PasswordDiubah.add(b_oke3);
+        b_oke3.setBounds(610, 440, 180, 40);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup password berhasil diubah.png"))); // NOI18N
+        popUp_PasswordDiubah.add(jLabel9);
+        jLabel9.setBounds(360, 220, 720, 310);
+
+        getContentPane().add(popUp_PasswordDiubah);
+        popUp_PasswordDiubah.setBounds(0, 0, 1464, 789);
+
         popUp_PasswordTidakSama.setBackground(new Color(0,0,0,150));
         popUp_PasswordTidakSama.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -70,7 +97,7 @@ public class lupa2 extends javax.swing.JFrame {
         popUp_PasswordTidakSama.add(b_oke2);
         b_oke2.setBounds(630, 440, 180, 40);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup username atau password salah.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup password tidak sama.png"))); // NOI18N
         popUp_PasswordTidakSama.add(jLabel8);
         jLabel8.setBounds(360, 220, 720, 310);
 
@@ -196,7 +223,7 @@ public class lupa2 extends javax.swing.JFrame {
             if(newpassword.length() >= 8){
             Logic.LogicLogin login = new Logic.LogicLogin();
             boolean konfirmasi = login.changePassword(newpassword);
-            new Fpasswordubah().setVisible(konfirmasi);
+            popUp_PasswordDiubah.setVisible(true);
             }else{
                 popUp_PasswordKurang.setVisible(true);
 //              Fpasswordkurang kurang = new Fpasswordkurang();
@@ -263,6 +290,15 @@ public class lupa2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_popUp_PasswordTidakSamaMousePressed
 
+    private void b_oke3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_oke3MouseClicked
+        this.dispose();
+        new login().setVisible(true);
+    }//GEN-LAST:event_b_oke3MouseClicked
+
+    private void popUp_PasswordDiubahMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_PasswordDiubahMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popUp_PasswordDiubahMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -301,6 +337,7 @@ public class lupa2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel b_oke1;
     private javax.swing.JLabel b_oke2;
+    private javax.swing.JLabel b_oke3;
     private javax.swing.JLabel background;
     private javax.swing.JLabel btnback;
     private javax.swing.JLabel btnexit;
@@ -308,6 +345,8 @@ public class lupa2 extends javax.swing.JFrame {
     private javax.swing.JLabel hideEye1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel popUp_PasswordDiubah;
     private javax.swing.JPanel popUp_PasswordKurang;
     private javax.swing.JPanel popUp_PasswordTidakSama;
     private javax.swing.JLabel t_ubahpass;
