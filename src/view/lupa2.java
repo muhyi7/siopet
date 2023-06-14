@@ -19,6 +19,8 @@ public class lupa2 extends javax.swing.JFrame {
      */
     public lupa2() {
         initComponents();
+        popUp_PasswordKurang.setVisible(false);
+        popUp_PasswordTidakSama.setVisible(false);
     }
 
     /**
@@ -30,6 +32,12 @@ public class lupa2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUp_PasswordTidakSama = new javax.swing.JPanel();
+        b_oke2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        popUp_PasswordKurang = new javax.swing.JPanel();
+        b_oke1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
         hideEye = new javax.swing.JLabel();
         unhideEye1 = new javax.swing.JLabel();
@@ -44,7 +52,54 @@ public class lupa2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
+
+        popUp_PasswordTidakSama.setBackground(new Color(0,0,0,150));
+        popUp_PasswordTidakSama.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_PasswordTidakSamaMousePressed(evt);
+            }
+        });
+        popUp_PasswordTidakSama.setLayout(null);
+
+        b_oke2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_oke2MouseClicked(evt);
+            }
+        });
+        popUp_PasswordTidakSama.add(b_oke2);
+        b_oke2.setBounds(630, 440, 180, 40);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup username atau password salah.png"))); // NOI18N
+        popUp_PasswordTidakSama.add(jLabel8);
+        jLabel8.setBounds(360, 220, 720, 310);
+
+        getContentPane().add(popUp_PasswordTidakSama);
+        popUp_PasswordTidakSama.setBounds(0, 0, 1464, 789);
+
+        popUp_PasswordKurang.setBackground(new Color(0,0,0,200));
+        popUp_PasswordKurang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_PasswordKurangMousePressed(evt);
+            }
+        });
+        popUp_PasswordKurang.setLayout(null);
+
+        b_oke1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_oke1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_oke1MouseClicked(evt);
+            }
+        });
+        popUp_PasswordKurang.add(b_oke1);
+        b_oke1.setBounds(630, 430, 170, 50);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup password kurang dari 8 digit.png"))); // NOI18N
+        popUp_PasswordKurang.add(jLabel6);
+        jLabel6.setBounds(360, 220, 720, 300);
+
+        getContentPane().add(popUp_PasswordKurang);
+        popUp_PasswordKurang.setBounds(0, 0, 1464, 789);
 
         unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -52,7 +107,8 @@ public class lupa2 extends javax.swing.JFrame {
                 unhideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 280, 30, 30));
+        getContentPane().add(unhideEye);
+        unhideEye.setBounds(1250, 280, 30, 30);
 
         hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
         hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -60,7 +116,8 @@ public class lupa2 extends javax.swing.JFrame {
                 hideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 280, 30, 30));
+        getContentPane().add(hideEye);
+        hideEye.setBounds(1250, 280, 30, 30);
 
         unhideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -68,7 +125,8 @@ public class lupa2 extends javax.swing.JFrame {
                 unhideEye1MousePressed(evt);
             }
         });
-        getContentPane().add(unhideEye1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+        getContentPane().add(unhideEye1);
+        unhideEye1.setBounds(1250, 400, 30, 30);
 
         hideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
         hideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,12 +134,14 @@ public class lupa2 extends javax.swing.JFrame {
                 hideEye1MousePressed(evt);
             }
         });
-        getContentPane().add(hideEye1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+        getContentPane().add(hideEye1);
+        hideEye1.setBounds(1250, 400, 30, 30);
 
         txt_newpass.setBackground(new Color(0,0,0,0));
         txt_newpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
         txt_newpass.setBorder(null);
-        getContentPane().add(txt_newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 270, 380, 60));
+        getContentPane().add(txt_newpass);
+        txt_newpass.setBounds(900, 270, 380, 60);
 
         txt_validpass.setBackground(new Color(0,0,0,0));
         txt_validpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
@@ -91,7 +151,8 @@ public class lupa2 extends javax.swing.JFrame {
                 txt_validpassActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_validpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 380, 380, 70));
+        getContentPane().add(txt_validpass);
+        txt_validpass.setBounds(910, 380, 380, 70);
 
         t_ubahpass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         t_ubahpass.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,7 +160,8 @@ public class lupa2 extends javax.swing.JFrame {
                 t_ubahpassMouseClicked(evt);
             }
         });
-        getContentPane().add(t_ubahpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 480, 190, 70));
+        getContentPane().add(t_ubahpass);
+        t_ubahpass.setBounds(990, 480, 190, 70);
 
         btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
         btnexit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,7 +169,8 @@ public class lupa2 extends javax.swing.JFrame {
                 btnexitMouseClicked(evt);
             }
         });
-        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
+        getContentPane().add(btnexit);
+        btnexit.setBounds(1270, 20, 51, 51);
 
         btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
         btnback.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,12 +178,14 @@ public class lupa2 extends javax.swing.JFrame {
                 btnbackMouseClicked(evt);
             }
         });
-        getContentPane().add(btnback, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
+        getContentPane().add(btnback);
+        btnback.setBounds(1210, 20, 50, 50);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ChangePassword.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background);
+        background.setBounds(0, 0, 1464, 789);
 
-        pack();
+        setSize(new java.awt.Dimension(1464, 789));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -133,12 +198,14 @@ public class lupa2 extends javax.swing.JFrame {
             boolean konfirmasi = login.changePassword(newpassword);
             new Fpasswordubah().setVisible(konfirmasi);
             }else{
-              Fpasswordkurang kurang = new Fpasswordkurang();
-              kurang.setVisible(true);
+                popUp_PasswordKurang.setVisible(true);
+//              Fpasswordkurang kurang = new Fpasswordkurang();
+//              kurang.setVisible(true);
             }
         }else{
-            Fpasswordbeda beda = new Fpasswordbeda();
-            beda.setVisible(true);
+                popUp_PasswordTidakSama.setVisible(true);
+//            Fpasswordbeda beda = new Fpasswordbeda();
+//            beda.setVisible(true);
         }
     }//GEN-LAST:event_t_ubahpassMouseClicked
 
@@ -178,6 +245,24 @@ public class lupa2 extends javax.swing.JFrame {
         txt_validpass.setEchoChar('*');
     }//GEN-LAST:event_hideEye1MousePressed
 
+    private void b_oke1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_oke1MouseClicked
+        popUp_PasswordKurang.setVisible(false);
+    }//GEN-LAST:event_b_oke1MouseClicked
+
+    private void popUp_PasswordKurangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_PasswordKurangMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popUp_PasswordKurangMousePressed
+
+    private void b_oke2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_oke2MouseClicked
+        this.dispose();
+        new lupa1().setVisible(false);
+        new lupa2().setVisible(true);
+    }//GEN-LAST:event_b_oke2MouseClicked
+
+    private void popUp_PasswordTidakSamaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_PasswordTidakSamaMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popUp_PasswordTidakSamaMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -214,11 +299,17 @@ public class lupa2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel b_oke1;
+    private javax.swing.JLabel b_oke2;
     private javax.swing.JLabel background;
     private javax.swing.JLabel btnback;
     private javax.swing.JLabel btnexit;
     private javax.swing.JLabel hideEye;
     private javax.swing.JLabel hideEye1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel popUp_PasswordKurang;
+    private javax.swing.JPanel popUp_PasswordTidakSama;
     private javax.swing.JLabel t_ubahpass;
     private javax.swing.JPasswordField txt_newpass;
     private javax.swing.JPasswordField txt_validpass;

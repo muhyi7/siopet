@@ -6,6 +6,7 @@ package view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 import javax.swing.Timer;
 
 /**
@@ -108,11 +109,18 @@ public class splash extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new splash().setVisible(true);
+        splash sp = new splash();
+        sp.setVisible(true);
+        
+        try {
+            for (int i = 0; i < 100; i++) {
+                Thread.sleep(55);
             }
-        });
+            
+            new login().setVisible(true);
+            sp.dispose();
+        } catch (Exception e) {
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

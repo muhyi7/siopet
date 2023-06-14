@@ -5,6 +5,8 @@
 package view;
 
 import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 import notif.login.*;
 
@@ -19,6 +21,8 @@ public class lupa1 extends javax.swing.JFrame {
      */
     public lupa1() {
         initComponents();
+        popUp_PINSalah.setVisible(false);
+        popUp_PINValid.setVisible(false);
     }
 
     /**
@@ -30,6 +34,12 @@ public class lupa1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popUp_PINSalah = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        popUp_PINValid = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         b_lanjut = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
         hideEye = new javax.swing.JLabel();
@@ -42,7 +52,54 @@ public class lupa1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
+
+        popUp_PINSalah.setBackground(new Color(0,0,0,200));
+        popUp_PINSalah.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_PINSalahMousePressed(evt);
+            }
+        });
+        popUp_PINSalah.setLayout(null);
+
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        popUp_PINSalah.add(jLabel5);
+        jLabel5.setBounds(630, 420, 170, 50);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/popup pin tidak sesuai.png"))); // NOI18N
+        popUp_PINSalah.add(jLabel6);
+        jLabel6.setBounds(360, 210, 720, 300);
+
+        getContentPane().add(popUp_PINSalah);
+        popUp_PINSalah.setBounds(0, 0, 1464, 789);
+
+        popUp_PINValid.setBackground(new Color(0,0,0,150));
+        popUp_PINValid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                popUp_PINValidMousePressed(evt);
+            }
+        });
+        popUp_PINValid.setLayout(null);
+
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        popUp_PINValid.add(jLabel7);
+        jLabel7.setBounds(630, 400, 180, 40);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/notif/login/Pinberhasil.png"))); // NOI18N
+        popUp_PINValid.add(jLabel8);
+        jLabel8.setBounds(380, 180, 720, 310);
+
+        getContentPane().add(popUp_PINValid);
+        popUp_PINValid.setBounds(0, 0, 1464, 789);
 
         b_lanjut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         b_lanjut.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -50,7 +107,8 @@ public class lupa1 extends javax.swing.JFrame {
                 b_lanjutMouseClicked(evt);
             }
         });
-        getContentPane().add(b_lanjut, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 480, 240, 70));
+        getContentPane().add(b_lanjut);
+        b_lanjut.setBounds(980, 480, 240, 70);
 
         unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
         unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,7 +116,8 @@ public class lupa1 extends javax.swing.JFrame {
                 unhideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(unhideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+        getContentPane().add(unhideEye);
+        unhideEye.setBounds(1250, 400, 30, 30);
 
         hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
         hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -66,7 +125,8 @@ public class lupa1 extends javax.swing.JFrame {
                 hideEyeMousePressed(evt);
             }
         });
-        getContentPane().add(hideEye, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 400, 30, 30));
+        getContentPane().add(hideEye);
+        hideEye.setBounds(1250, 400, 30, 30);
 
         txt_username1.setBackground(new Color(0,0,0,0));
         txt_username1.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
@@ -76,12 +136,14 @@ public class lupa1 extends javax.swing.JFrame {
                 txt_username1ActionPerformed(evt);
             }
         });
-        getContentPane().add(txt_username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 270, 380, 60));
+        getContentPane().add(txt_username1);
+        txt_username1.setBounds(900, 270, 380, 60);
 
         txt_pin.setBackground(new Color(0,0,0,0));
         txt_pin.setFont(new java.awt.Font("Microsoft Tai Le", 0, 48)); // NOI18N
         txt_pin.setBorder(null);
-        getContentPane().add(txt_pin, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 380, 370, 70));
+        getContentPane().add(txt_pin);
+        txt_pin.setBounds(900, 380, 370, 70);
 
         b_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
         b_exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,7 +151,8 @@ public class lupa1 extends javax.swing.JFrame {
                 b_exitMouseClicked(evt);
             }
         });
-        getContentPane().add(b_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 20, -1, -1));
+        getContentPane().add(b_exit);
+        b_exit.setBounds(1270, 20, 51, 51);
 
         b_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
         b_back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,12 +160,14 @@ public class lupa1 extends javax.swing.JFrame {
                 b_backMouseClicked(evt);
             }
         });
-        getContentPane().add(b_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 20, -1, -1));
+        getContentPane().add(b_back);
+        b_back.setBounds(1210, 20, 50, 50);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ForgetPassword.png"))); // NOI18N
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+        getContentPane().add(background);
+        background.setBounds(0, 0, 1464, 789);
 
-        pack();
+        setSize(new java.awt.Dimension(1464, 789));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,11 +177,9 @@ public class lupa1 extends javax.swing.JFrame {
          Logic.LogicLogin login = new Logic.LogicLogin();
          boolean konfirmasi = login.forgetPassword(username,pin);
          if(konfirmasi){
-             FPinberhasil berhasil = new FPinberhasil();
-             berhasil.setVisible(true);
+             popUp_PINValid.setVisible(true);
          }else{
-             FPingagal gagal = new FPingagal();
-             gagal.setVisible(true);
+             popUp_PINSalah.setVisible(true);
          }
     }//GEN-LAST:event_b_lanjutMouseClicked
 
@@ -144,6 +207,24 @@ public class lupa1 extends javax.swing.JFrame {
         hideEye.setVisible(false);
         txt_pin.setEchoChar('*');
     }//GEN-LAST:event_hideEyeMousePressed
+
+    private void popUp_PINSalahMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_PINSalahMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popUp_PINSalahMousePressed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        popUp_PINSalah.setVisible(false);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void popUp_PINValidMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_PINValidMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_popUp_PINValidMousePressed
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        this.dispose();
+        new lupa1().setVisible(false);
+        new lupa2().setVisible(true);
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -186,6 +267,12 @@ public class lupa1 extends javax.swing.JFrame {
     private javax.swing.JLabel b_lanjut;
     private javax.swing.JLabel background;
     private javax.swing.JLabel hideEye;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel popUp_PINSalah;
+    private javax.swing.JPanel popUp_PINValid;
     private javax.swing.JPasswordField txt_pin;
     private javax.swing.JTextField txt_username1;
     private javax.swing.JLabel unhideEye;
