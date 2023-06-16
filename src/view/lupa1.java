@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.*;
-import notif.login.*;
 
 /**
  *

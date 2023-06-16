@@ -4,7 +4,6 @@
  */
 package view;
 import Logic.LogicLogin;
-import notif.login.*;
 import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.Font;

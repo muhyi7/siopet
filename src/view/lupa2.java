@@ -6,7 +6,6 @@ package view;
 
 import javax.swing.JOptionPane;
 import java.awt.*;
-import notif.login.*;
 
 /**
  *
