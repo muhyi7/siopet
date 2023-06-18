@@ -64,7 +64,7 @@ public class splash extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/splash - Copy.gif"))); // NOI18N
+        gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Sequence 01.gif"))); // NOI18N
         getContentPane().add(gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         splashscreen.setLayout(null);

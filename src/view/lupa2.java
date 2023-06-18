@@ -6,6 +6,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import java.awt.*;
+import javax.swing.JTextField;
 
 /**
  *
@@ -21,6 +22,23 @@ public class lupa2 extends javax.swing.JFrame {
         popUp_PasswordKurang.setVisible(false);
         popUp_PasswordTidakSama.setVisible(false);
         popUp_PasswordDiubah.setVisible(false);
+        hideEye.setVisible(false);
+        hideEye1.setVisible(false);
+        
+        addPlaceHolderStyle(txt_newpass);
+        addPlaceHolderStyle(txt_validpass);
+    }
+    public void addPlaceHolderStyle(JTextField textfield){
+        Font font = textfield.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textfield.setFont(font);
+        textfield.setForeground(Color.gray);
+    }
+    public void removePlaceHolderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
     }
 
     /**
@@ -32,15 +50,6 @@ public class lupa2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popUp_PasswordDiubah = new javax.swing.JPanel();
-        b_oke3 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        popUp_PasswordTidakSama = new javax.swing.JPanel();
-        b_oke2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        popUp_PasswordKurang = new javax.swing.JPanel();
-        b_oke1 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         unhideEye = new javax.swing.JLabel();
         hideEye = new javax.swing.JLabel();
         unhideEye1 = new javax.swing.JLabel();
@@ -51,11 +60,132 @@ public class lupa2 extends javax.swing.JFrame {
         btnexit = new javax.swing.JLabel();
         btnback = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
+        popUp_PasswordDiubah = new javax.swing.JPanel();
+        b_oke3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        popUp_PasswordTidakSama = new javax.swing.JPanel();
+        b_oke2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        popUp_PasswordKurang = new javax.swing.JPanel();
+        b_oke1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+                formWindowLostFocus(evt);
+            }
+        });
         getContentPane().setLayout(null);
+
+        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
+        unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                unhideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(unhideEye);
+        unhideEye.setBounds(1250, 280, 30, 30);
+
+        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
+        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(hideEye);
+        hideEye.setBounds(1250, 280, 30, 30);
+
+        unhideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
+        unhideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                unhideEye1MousePressed(evt);
+            }
+        });
+        getContentPane().add(unhideEye1);
+        unhideEye1.setBounds(1250, 400, 30, 30);
+
+        hideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
+        hideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideEye1MousePressed(evt);
+            }
+        });
+        getContentPane().add(hideEye1);
+        hideEye1.setBounds(1250, 400, 30, 30);
+
+        txt_newpass.setBackground(new Color(0,0,0,0));
+        txt_newpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txt_newpass.setText("Masukkan Password");
+        txt_newpass.setBorder(null);
+        txt_newpass.setEchoChar('\u0000');
+        txt_newpass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_newpassFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_newpassFocusLost(evt);
+            }
+        });
+        getContentPane().add(txt_newpass);
+        txt_newpass.setBounds(900, 270, 380, 60);
+
+        txt_validpass.setBackground(new Color(0,0,0,0));
+        txt_validpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txt_validpass.setText("Ulangi Password");
+        txt_validpass.setBorder(null);
+        txt_validpass.setEchoChar('\u0000');
+        txt_validpass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_validpassFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_validpassFocusLost(evt);
+            }
+        });
+        txt_validpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_validpassActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txt_validpass);
+        txt_validpass.setBounds(910, 380, 380, 70);
+
+        t_ubahpass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        t_ubahpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                t_ubahpassMouseClicked(evt);
+            }
+        });
+        getContentPane().add(t_ubahpass);
+        t_ubahpass.setBounds(990, 480, 190, 70);
+
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
+        btnexit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnexitMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnexit);
+        btnexit.setBounds(1270, 20, 51, 51);
+
+        btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
+        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnbackMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnback);
+        btnback.setBounds(1210, 20, 50, 50);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ChangePassword.png"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(0, 0, 1464, 789);
 
         popUp_PasswordDiubah.setBackground(new Color(0,0,0,150));
         popUp_PasswordDiubah.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -127,90 +257,6 @@ public class lupa2 extends javax.swing.JFrame {
         getContentPane().add(popUp_PasswordKurang);
         popUp_PasswordKurang.setBounds(0, 0, 1464, 789);
 
-        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
-        unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                unhideEyeMousePressed(evt);
-            }
-        });
-        getContentPane().add(unhideEye);
-        unhideEye.setBounds(1250, 280, 30, 30);
-
-        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
-        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                hideEyeMousePressed(evt);
-            }
-        });
-        getContentPane().add(hideEye);
-        hideEye.setBounds(1250, 280, 30, 30);
-
-        unhideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
-        unhideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                unhideEye1MousePressed(evt);
-            }
-        });
-        getContentPane().add(unhideEye1);
-        unhideEye1.setBounds(1250, 400, 30, 30);
-
-        hideEye1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
-        hideEye1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                hideEye1MousePressed(evt);
-            }
-        });
-        getContentPane().add(hideEye1);
-        hideEye1.setBounds(1250, 400, 30, 30);
-
-        txt_newpass.setBackground(new Color(0,0,0,0));
-        txt_newpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
-        txt_newpass.setBorder(null);
-        getContentPane().add(txt_newpass);
-        txt_newpass.setBounds(900, 270, 380, 60);
-
-        txt_validpass.setBackground(new Color(0,0,0,0));
-        txt_validpass.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
-        txt_validpass.setBorder(null);
-        txt_validpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_validpassActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txt_validpass);
-        txt_validpass.setBounds(910, 380, 380, 70);
-
-        t_ubahpass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        t_ubahpass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                t_ubahpassMouseClicked(evt);
-            }
-        });
-        getContentPane().add(t_ubahpass);
-        t_ubahpass.setBounds(990, 480, 190, 70);
-
-        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
-        btnexit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnexitMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btnexit);
-        btnexit.setBounds(1270, 20, 51, 51);
-
-        btnback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_previous.png"))); // NOI18N
-        btnback.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnbackMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btnback);
-        btnback.setBounds(1210, 20, 50, 50);
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ChangePassword.png"))); // NOI18N
-        getContentPane().add(background);
-        background.setBounds(0, 0, 1464, 789);
-
         setSize(new java.awt.Dimension(1464, 789));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -260,14 +306,14 @@ public class lupa2 extends javax.swing.JFrame {
     }//GEN-LAST:event_hideEyeMousePressed
 
     private void unhideEye1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unhideEye1MousePressed
-        hideEye.setVisible(true);
-        unhideEye.setVisible(false);
+        hideEye1.setVisible(true);
+        unhideEye1.setVisible(false);
         txt_validpass.setEchoChar((char)0);
     }//GEN-LAST:event_unhideEye1MousePressed
 
     private void hideEye1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideEye1MousePressed
-        unhideEye.setVisible(true);
-        hideEye.setVisible(false);
+        unhideEye1.setVisible(true);
+        hideEye1.setVisible(false);
         txt_validpass.setEchoChar('*');
     }//GEN-LAST:event_hideEye1MousePressed
 
@@ -297,6 +343,50 @@ public class lupa2 extends javax.swing.JFrame {
     private void popUp_PasswordDiubahMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_popUp_PasswordDiubahMousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_popUp_PasswordDiubahMousePressed
+
+    private void txt_newpassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_newpassFocusGained
+        if(txt_newpass.getText().equals("Masukkan Password")){
+            txt_newpass.setText(null);
+            txt_newpass.requestFocus(); 
+            txt_newpass.setEchoChar('*');
+            txt_newpass.setForeground(Color.black);
+            removePlaceHolderStyle(txt_newpass);
+        }
+    }//GEN-LAST:event_txt_newpassFocusGained
+
+    private void txt_newpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_newpassFocusLost
+         if(txt_newpass.getText().length()==0){
+            addPlaceHolderStyle(txt_newpass);
+            txt_newpass.setText("Masukkan Password");
+            txt_newpass.setEchoChar('\u0000');
+        }
+    }//GEN-LAST:event_txt_newpassFocusLost
+
+    private void txt_validpassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_validpassFocusGained
+         if(txt_validpass.getText().equals("Ulangi Password")){
+            txt_validpass.setText(null);
+            txt_validpass.requestFocus(); 
+            txt_validpass.setEchoChar('*');
+            txt_validpass.setForeground(Color.black);
+            removePlaceHolderStyle(txt_validpass);
+        }
+    }//GEN-LAST:event_txt_validpassFocusGained
+
+    private void txt_validpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_validpassFocusLost
+        if(txt_validpass.getText().length()==0){
+            addPlaceHolderStyle(txt_validpass);
+            txt_validpass.setText("Ulangi Password");
+            txt_validpass.setEchoChar('\u0000');
+        }
+    }//GEN-LAST:event_txt_validpassFocusLost
+
+    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowLostFocus
+
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        this.requestFocus();
+    }//GEN-LAST:event_formWindowGainedFocus
 
     /**
      * @param args the command line arguments

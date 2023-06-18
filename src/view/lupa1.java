@@ -22,6 +22,22 @@ public class lupa1 extends javax.swing.JFrame {
         initComponents();
         popUp_PINSalah.setVisible(false);
         popUp_PINValid.setVisible(false);
+        addPlaceHolderStyle(txt_username1);
+        addPlaceHolderStyle(txt_pin);
+        hideEye.setVisible(false);
+
+    }
+    public void addPlaceHolderStyle(JTextField textfield){
+        Font font = textfield.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textfield.setFont(font);
+        textfield.setForeground(Color.gray);
+    }
+    public void removePlaceHolderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
     }
 
     /**
@@ -51,6 +67,13 @@ public class lupa1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+                formWindowGainedFocus(evt);
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+            }
+        });
         getContentPane().setLayout(null);
 
         popUp_PINValid.setBackground(new Color(0,0,0,150));
@@ -129,7 +152,16 @@ public class lupa1 extends javax.swing.JFrame {
 
         txt_username1.setBackground(new Color(0,0,0,0));
         txt_username1.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txt_username1.setText("Masukkan Username");
         txt_username1.setBorder(null);
+        txt_username1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_username1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_username1FocusLost(evt);
+            }
+        });
         txt_username1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_username1ActionPerformed(evt);
@@ -140,7 +172,17 @@ public class lupa1 extends javax.swing.JFrame {
 
         txt_pin.setBackground(new Color(0,0,0,0));
         txt_pin.setFont(new java.awt.Font("Microsoft Tai Le", 0, 48)); // NOI18N
+        txt_pin.setText("Masukkan PIN");
         txt_pin.setBorder(null);
+        txt_pin.setEchoChar('\u0000');
+        txt_pin.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txt_pinFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txt_pinFocusLost(evt);
+            }
+        });
         getContentPane().add(txt_pin);
         txt_pin.setBounds(900, 380, 370, 70);
 
@@ -224,6 +266,43 @@ public class lupa1 extends javax.swing.JFrame {
         new lupa1().setVisible(false);
         new lupa2().setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void txt_username1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_username1FocusGained
+        if(txt_username1.getText().equals("Masukkan Username")){
+            txt_username1.setText(null);
+            txt_username1.requestFocus();
+            removePlaceHolderStyle(txt_username1);
+        }
+    }//GEN-LAST:event_txt_username1FocusGained
+
+    private void txt_username1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_username1FocusLost
+        if(txt_username1.getText().length()==0){  
+           addPlaceHolderStyle(txt_username1);  
+           txt_username1.setText("Masukkan Username");
+        }
+    }//GEN-LAST:event_txt_username1FocusLost
+
+    private void txt_pinFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_pinFocusGained
+        if(txt_pin.getText().equals("Masukkan PIN")){
+            txt_pin.setText(null);
+            txt_pin.requestFocus(); 
+            txt_pin.setEchoChar('*');
+            txt_pin.setForeground(Color.black);
+            removePlaceHolderStyle(txt_pin);
+        }
+    }//GEN-LAST:event_txt_pinFocusGained
+
+    private void txt_pinFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txt_pinFocusLost
+         if(txt_pin.getText().length()==0){
+            addPlaceHolderStyle(txt_pin);
+            txt_pin.setText("Masukkan PIN");
+            txt_pin.setEchoChar('\u0000');
+        }
+    }//GEN-LAST:event_txt_pinFocusLost
+
+    private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
+        this.requestFocus();
+    }//GEN-LAST:event_formWindowGainedFocus
 
     /**
      * @param args the command line arguments

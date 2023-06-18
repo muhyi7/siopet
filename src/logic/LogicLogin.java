@@ -95,7 +95,7 @@ public class LogicLogin {
     
     public boolean ScanRFID(String username){
     try{
-          String query = "SELECT * FROM tb_pegawai WHERE id_pegawai ='"+ username +"'";
+          String query = "SELECT * FROM tb_pegawai WHERE rfid ='"+ username +"'";
           Connection koneksi = (Connection)Conn.configDB();
           PreparedStatement pst = koneksi.prepareStatement(query);
           ResultSet res = pst.executeQuery();
@@ -103,7 +103,7 @@ public class LogicLogin {
           if(res.next()){
               String lvl = res.getString("jabatan");
                 this.level = res.getString("jabatan");
-                this.userId = res.getString("id_pegawai");
+                this.userId = res.getString("rfid");
                 this.nama = res.getString("nama_pegawai");
                 return true;
             }else{

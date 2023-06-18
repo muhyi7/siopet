@@ -30,7 +30,7 @@
     <Component class="javax.swing.JLabel" name="gif">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/splash - Copy.gif"/>
+          <Image iconType="3" name="/img/Sequence 01.gif"/>
         </Property>
       </Properties>
       <Constraints>
