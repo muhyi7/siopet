@@ -58,16 +58,6 @@ public class login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel7 = new javax.swing.JLabel();
-        unhideEye = new javax.swing.JLabel();
-        hideEye = new javax.swing.JLabel();
-        txtusername = new javax.swing.JTextField();
-        txtpassword = new javax.swing.JPasswordField();
-        b_rfid = new javax.swing.JLabel();
-        b_login = new javax.swing.JLabel();
-        b_lupapass = new javax.swing.JLabel();
-        exit1 = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
         popUp_RFID = new javax.swing.JPanel();
         exit = new javax.swing.JLabel();
         rfid_text = new javax.swing.JLabel();
@@ -83,6 +73,16 @@ public class login extends javax.swing.JFrame {
         popUp_berhasilLogin = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        unhideEye = new javax.swing.JLabel();
+        hideEye = new javax.swing.JLabel();
+        txtusername = new javax.swing.JTextField();
+        txtpassword = new javax.swing.JPasswordField();
+        b_rfid = new javax.swing.JLabel();
+        b_login = new javax.swing.JLabel();
+        b_lupapass = new javax.swing.JLabel();
+        exit1 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,117 +95,6 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(null);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif login.gif"))); // NOI18N
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, -10, 790, 800);
-
-        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
-        unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                unhideEyeMousePressed(evt);
-            }
-        });
-        getContentPane().add(unhideEye);
-        unhideEye.setBounds(1250, 400, 30, 30);
-
-        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
-        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                hideEyeMousePressed(evt);
-            }
-        });
-        getContentPane().add(hideEye);
-        hideEye.setBounds(1250, 400, 30, 30);
-
-        txtusername.setBackground(new Color(0,0,0,0));
-        txtusername.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
-        txtusername.setText("Masukkan Username");
-        txtusername.setBorder(null);
-        txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtusernameFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtusernameFocusLost(evt);
-            }
-        });
-        txtusername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtusernameActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtusername);
-        txtusername.setBounds(910, 270, 360, 60);
-
-        txtpassword.setBackground(new Color(0,0,0,0));
-        txtpassword.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
-        txtpassword.setText("Masukkan Password");
-        txtpassword.setBorder(null);
-        txtpassword.setEchoChar('\u0000');
-        txtpassword.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtpasswordFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtpasswordFocusLost(evt);
-            }
-        });
-        txtpassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtpasswordMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                txtpasswordMouseReleased(evt);
-            }
-        });
-        txtpassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpasswordActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtpassword);
-        txtpassword.setBounds(900, 380, 360, 70);
-
-        b_rfid.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        b_rfid.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                b_rfidMouseClicked(evt);
-            }
-        });
-        getContentPane().add(b_rfid);
-        b_rfid.setBounds(1000, 560, 170, 50);
-
-        b_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        b_login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                b_loginMouseClicked(evt);
-            }
-        });
-        getContentPane().add(b_login);
-        b_login.setBounds(990, 520, 200, 60);
-
-        b_lupapass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                b_lupapassMouseClicked(evt);
-            }
-        });
-        getContentPane().add(b_lupapass);
-        b_lupapass.setBounds(1160, 460, 130, 30);
-
-        exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
-        exit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exit1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exit1MouseClicked(evt);
-            }
-        });
-        getContentPane().add(exit1);
-        exit1.setBounds(1330, 10, 51, 51);
-
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Login Page.png"))); // NOI18N
-        getContentPane().add(background);
-        background.setBounds(0, 0, 1464, 789);
 
         popUp_RFID.setBackground(new Color(0,0,0,200));
         popUp_RFID.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -320,6 +209,117 @@ public class login extends javax.swing.JFrame {
 
         getContentPane().add(popUp_berhasilLogin);
         popUp_berhasilLogin.setBounds(0, 0, 1464, 789);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gif login.gif"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, -10, 790, 800);
+
+        unhideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_show.png"))); // NOI18N
+        unhideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                unhideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(unhideEye);
+        unhideEye.setBounds(1250, 400, 30, 30);
+
+        hideEye.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_hide.png"))); // NOI18N
+        hideEye.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                hideEyeMousePressed(evt);
+            }
+        });
+        getContentPane().add(hideEye);
+        hideEye.setBounds(1250, 400, 30, 30);
+
+        txtusername.setBackground(new Color(0,0,0,0));
+        txtusername.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txtusername.setText("Masukkan Username");
+        txtusername.setBorder(null);
+        txtusername.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtusernameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtusernameFocusLost(evt);
+            }
+        });
+        txtusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtusername);
+        txtusername.setBounds(910, 270, 360, 60);
+
+        txtpassword.setBackground(new Color(0,0,0,0));
+        txtpassword.setFont(new java.awt.Font("Microsoft Tai Le", 0, 18)); // NOI18N
+        txtpassword.setText("Masukkan Password");
+        txtpassword.setBorder(null);
+        txtpassword.setEchoChar('\u0000');
+        txtpassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtpasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtpasswordFocusLost(evt);
+            }
+        });
+        txtpassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtpasswordMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                txtpasswordMouseReleased(evt);
+            }
+        });
+        txtpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtpassword);
+        txtpassword.setBounds(900, 380, 360, 70);
+
+        b_rfid.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_rfid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_rfidMouseClicked(evt);
+            }
+        });
+        getContentPane().add(b_rfid);
+        b_rfid.setBounds(1000, 560, 170, 50);
+
+        b_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        b_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_loginMouseClicked(evt);
+            }
+        });
+        getContentPane().add(b_login);
+        b_login.setBounds(990, 520, 200, 60);
+
+        b_lupapass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_lupapassMouseClicked(evt);
+            }
+        });
+        getContentPane().add(b_lupapass);
+        b_lupapass.setBounds(1160, 460, 130, 30);
+
+        exit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icon_exit.png"))); // NOI18N
+        exit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exit1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(exit1);
+        exit1.setBounds(1330, 10, 51, 51);
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Login Page.png"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(0, 0, 1464, 789);
 
         setSize(new java.awt.Dimension(1464, 789));
         setLocationRelativeTo(null);
@@ -501,17 +501,21 @@ public class login extends javax.swing.JFrame {
 //                owner.setVisible(true);
 //                JOptionPane.showMessageDialog(null,"Berhasil Login Owner");
              rfid_text.setText("Kartu Valid");
-             JOptionPane.showMessageDialog(null,"Berhasil Login Owner");
-             new dasboardowner().setVisible(true);
+//             JOptionPane.showMessageDialog(null,"Berhasil Login Owner");
+//             new dasboardowner().setVisible(true);
              
-             this.dispose();
+            popUp_RFID.setVisible(false);
+            popUp_berhasilLogin.setVisible(true);
             
             }else if(lvl.equals("admin kasir")){
                 rfid_text.setText("Kartu Valid");
-                JOptionPane.showMessageDialog(null,"Berhasil Login Admin Kasir");
-                new dashboardadmin().setVisible(true); 
+                popUp_RFID.setVisible(false);
+                popUp_berhasilLoginAdmin.setVisible(true);
+//                JOptionPane.showMessageDialog(null,"Berhasil Login Admin Kasir");
+//                new dashboardadmin().setVisible(true); 
                 
-                this.dispose();           
+//                this.dispose();    
+
             }  
             
         }else{
